@@ -1,0 +1,166 @@
+:root {
+    --font-family: Menlo, Monaco, "Consolas", "Courier New", "Courier";
+    --button-green: #3BB662;
+    --button-yellow: #E5C30F;
+    --button-red: #E75448;
+    --font-size: 1rem;
+    --background-color: #30353A;
+    --common-radius: .5rem;
+    --common-spacing: .625rem;
+  }
+  
+  body {
+    background: #97cfca;
+    overflow: hidden;
+  }
+  
+  #terminal-js {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+  }
+  
+  .terminal-window {
+    text-align: left;
+    width: 37.5rem;
+    height: 30rem;
+    border-radius: var(--common-radius);
+    margin: auto;
+    position: relative;
+    top: 10.5rem;
+    overflow: hidden; 
+  }
+  
+  .terminal-window header {
+    background: #E0E8F0;
+    height: 1.875rem;
+    border-radius: var(--common-radius) var(--common-radius) 0 0;
+    padding-left: var(--common-spacing);
+    text-align: center;
+    font-family: var(--font-family);
+    font-weight: bold;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+    
+  .terminal-window header .button-container {
+    position: absolute;
+    left: var(--common-spacing);
+    top: 0;
+  }
+  
+  .terminal-window header .button {
+    width: .75rem;
+    height: .75rem;
+    margin: var(--common-spacing) .25rem 0 0;
+    display: inline-block;
+    border-radius: var(--common-radius);
+  }
+  
+  .terminal-window header .button.green {
+    background: var(--button-green);
+  }
+  
+  .terminal-window header .button.yellow {
+    background: var(--button-yellow);
+  }
+  
+  .terminal-window header .button.red {
+    background: var(--button-red);
+  }
+  
+  .terminal-window section.terminal {
+    color: white;
+    font-family: var(--font-family);
+    font-size: var(--font-size);
+    background: var(--background-color);
+    padding: var(--common-spacing);
+    box-sizing: border-box;
+    position: absolute;
+    width: 100%;
+    top: 1.875rem;
+    bottom: 0;
+    overflow: auto;
+    overflow-x: hidden; 
+    overflow-y: hidden; 
+  }
+  
+  .terminal-window .system-text { color: red;}
+  
+  .custom-cursor {
+    display: inline-block;
+    width: 0.5em;
+    height: 1em;
+    background-color: white;
+    vertical-align: text-bottom;
+    animation: blink 1s infinite;
+  }
+  
+  @keyframes blink {
+    50% { opacity: 0; }
+  }
+  
+  .stickman-container {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+  }
+  
+  .stickman {
+    position: absolute;
+    white-space: pre;
+    font-family: monospace;
+    font-size: 1.25rem; 
+    left: 0;
+  }
+  
+  @keyframes walk-right {
+    0% { transform: translateX(-100%); }
+    100% { transform: translateX(100%); }
+  }
+  
+  .error-report-link {
+    display: block;
+    margin-top: 11rem;
+    text-align: center;
+    position: relative;
+  }
+  
+  @media only screen and (max-width: 600px) {
+    .terminal-window {
+      width: 90%;  
+      height: auto; 
+      min-height: 80vh; 
+      margin: 0 auto; 
+      position: relative; 
+      top: 0; 
+    }
+  
+    .terminal-window header {
+      height: 1.5rem;
+    }
+  
+    .terminal-window section.terminal {
+      top: 1.5rem;
+      height: auto; 
+      overflow-y: visible; 
+    }
+  
+    .stickman-container {
+      display: none;
+    }
+  
+    .error-report-link {
+      display: block;
+      margin-top: 1rem; 
+      text-align: center;
+      width: 90%; 
+      margin-left: auto; 
+      margin-right: auto;
+      position: relative; 
+    }
+  }
