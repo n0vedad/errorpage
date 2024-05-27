@@ -34,14 +34,23 @@ document.addEventListener("DOMContentLoaded", () => {
     runScripts(data, 0);
   });
 
-  // Function to create a new DOM element with the given type and content
+  /**
+   * Creates a new DOM element with the given type and content
+   * @param {string} type - The type of the element to create (e.g., 'div', 'span').
+   * @param {string} content - The inner HTML content of the element.
+   * @returns {HTMLElement} The created DOM element.
+   */
   const createElementWithContent = (type, content) => {
     const element = document.createElement(type);
     element.innerHTML = content;
     return element;
   }
   
-  // Function to sequentially run each script action
+  /**
+   * Sequentially runs each script action
+   * @param {Array} data - An array of script actions to run.
+   * @param {number} pos - The current position in the script actions array.
+   */
   const runScripts = (data, pos) => {
     const prompt = document.querySelector('.prompt');
     const script = data[pos];
@@ -54,7 +63,7 @@ document.addEventListener("DOMContentLoaded", () => {
           typeSpeed: 30,
           showCursor: false,
           onComplete: () => {
-            // After typing is complete, wait for 2 seconds
+            // After typing is complete, wait for the specified post delay
             setTimeout(() => {
               const history = document.querySelector('.history');
               // If the next action is not 'view', append the typed string to the history
@@ -117,7 +126,9 @@ document.addEventListener("DOMContentLoaded", () => {
         const frameChangeRate = 10;
         let frameChangeCounter = 0;
         
-        // Function to animate the stickman
+        /**
+         * Animates the stickman by changing its frame and position
+         */
         const animateStickman = () => {
           // Change the frame every 10 frames
           if (frameChangeCounter % frameChangeRate === 0) {
@@ -162,4 +173,3 @@ document.addEventListener("DOMContentLoaded", () => {
         break;
     }
   }
-  
