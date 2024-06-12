@@ -23,11 +23,11 @@ document.addEventListener("DOMContentLoaded", () => {
       {
         action: 'type',
         strings: ["<span class='system-text'>[SYSTEM]:</span> I know these errors are not the one you're looking for and you must be really confused, but...", "<span class='system-text'>[SYSTEM]:</span>You can:<br>1. Try reloading the page in a few minutes.<br>2. Check your internet connection.<br>3. If the issue persists, report it to the site administrator or just pray..."],
-        postDelay: 3000
+        postDelay: 2000
       },
       {
         action: 'view',
-        postDelay: 1000
+        postDelay: 2000
       }
     ];
     // Function to execute the scripted actions
@@ -84,7 +84,7 @@ document.addEventListener("DOMContentLoaded", () => {
               if (pos < data.length) {
                 setTimeout(() => {
                   runScripts(data, pos);
-                }, script.postDelay || 1000);
+                }, script.postDelay);
               }
               // If this is the last script, add a custom cursor to the prompt
               if (pos === data.length - 1) {
@@ -92,7 +92,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 cursor.classList.add('custom-cursor');
                 prompt.appendChild(cursor);
               }
-            }, 2000);
+            }, script.postDelay);
           }
         });
         break;
