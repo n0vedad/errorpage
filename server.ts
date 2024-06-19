@@ -64,8 +64,7 @@ app.use((_, res) => {
   res.sendFile(filePath);
 });
 
-// Use the PORT environment variable and start the server
-const PORT = process.env.PORT || 3000;
-app.listen(PORT, () => {
-  console.log(`Server is running on http://localhost:${PORT}`);
+// Start the server
+app.listen(3000, () => {
+  console.log(`Server is running on http://localhost:3000`);
 });
