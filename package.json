@@ -8,7 +8,7 @@
     "clean": "rimraf dist",
     "compile": "tsc",
     "copy-assets": "cp -r public dist/public",
-    "start": "NODE_ENV=production node dist/server.js"
+    "start": "node dist/server.js"
   },
   "dependencies": {
     "express": "^4.19.2"
